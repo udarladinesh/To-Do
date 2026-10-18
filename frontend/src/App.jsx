@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-const API_BASE_URL = 'http://localhost:5000/api/todos';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function App() {
   // State management using useState
@@ -18,7 +18,7 @@ function App() {
 
     async function loadTodos() {
       try {
-        const response = await fetch(API_BASE_URL);
+        const response = await fetch(`${API_BASE_URL}/api/todos`);
         if (!response.ok) {
           const errorData = await response.json().catch(() => ({}));
           throw new Error(errorData.error || `Server responded with status ${response.status}`);
@@ -60,7 +60,7 @@ function App() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch(API_BASE_URL, {
+      const response = await fetch(`${API_BASE_URL}/api/todos`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ function App() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${todo._id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/todos/${todo._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ function App() {
     setErrorMessage(null);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/api/todos/${id}`, {
         method: 'DELETE',
       });
 

@@ -1,11 +1,17 @@
-# Full-Stack Todo App — Phase 1: Initial Project Setup
+# Full-Stack Todo App
 
-This project is a beginner-friendly foundation for learning how a full-stack web application works.
+This project is a full-stack web application with a React + Vite frontend and a Node.js + Express + MongoDB Atlas backend.
+
+## Live Deployment
+- **Frontend**: [https://to-do-sage-eight.vercel.app/](https://to-do-sage-eight.vercel.app/)
+- **Backend**: [https://todo-app-backend-28ey.onrender.com](https://todo-app-backend-28ey.onrender.com)
+
+---
 
 ## Tech Stack
 - **Frontend**: React + Vite
 - **Backend**: Node.js + Express
-- **Database**: MongoDB Atlas *(to be configured in a later phase)*
+- **Database**: MongoDB Atlas
 
 ---
 
